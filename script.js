@@ -42,6 +42,8 @@ let option2 = document.getElementsByClassName('optionend')[1];
 let option3 = document.getElementsByClassName('optionend')[2];
 let option4 = document.getElementsByClassName('optionend')[3];
 let question = document.getElementsByClassName('question')[0];
+let scorenumber = document.getElementsByClassName('scorenumber')[0];
+let questioncounter = document.getElementsByClassName('questioncount')[0];
 let currentQuestion = 0;
 let score = 0;
 let options = document.getElementsByClassName('option');
@@ -64,22 +66,23 @@ Array.from(options).forEach(option => {
         currentQuestion++;
         if (option.id == questions[currentQuestion-1].answer) {
         option.style.backgroundColor = 'green';
+        score+=10;
+        scorenumber.innerText = score;
         }
         else{
             option.style.backgroundColor = 'red';
         }
         if (currentQuestion < totalQuestions) {
-            setTimeout(() =>{ loadQuestion(currentQuestion)
-            option.style.backgroundColor = 'white';
-            
+            setTimeout(() =>{ 
+                loadQuestion(currentQuestion);
+                questioncounter.innerText = `${currentQuestion+1}/${totalQuestions}`;
+                option.style.backgroundColor = 'white';
             }, 2000);
-            
         }
         else{
             setTimeout(() =>{ 
                 window.location.href='end.html'
             }, 2000);
-           
         }
     });
 });

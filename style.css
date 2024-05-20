@@ -93,3 +93,19 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.numberscore{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+}
+b{
+    font-size: 1.5vw;
+}
+.questioncount{
+    font-size: 4vw;
+    color: #4a90e2;
+}
+.scorenumber{
+    font-size: 4vw;
+    color: #4a90e2;
+}
