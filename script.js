@@ -86,3 +86,4 @@ Array.from(options).forEach(option => {
         }
     });
 });
+localStorage.setItem('score', score);
