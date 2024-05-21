@@ -109,3 +109,17 @@ b{
     font-size: 4vw;
     color: #4a90e2;
 }
+.final-score{
+    font-size: 8vw;
+    margin-bottom: 5vw;
+    color: #4a90e2;
+
+}
+#playagain{
+    width:7vw;
+    text-align: center;
+}
+#gohome{
+    width:7vw;
+    text-align: center;
+}

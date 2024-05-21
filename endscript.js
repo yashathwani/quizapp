@@ -1,4 +1,6 @@
 
-let score = localStorage.getItem('score');
-let finalScore = document.querySelector('.final-score');
-finalScore.textContent = score;
+    let finalScore = localStorage.getItem('score');
+    if (!finalScore) {
+        finalScore = 0;
+    }
+    document.getElementsByClassName('final-score')[0].innerText = finalScore;

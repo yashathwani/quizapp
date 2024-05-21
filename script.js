@@ -60,14 +60,17 @@ function loadQuestion(questionIndex) {
 }
 
 loadQuestion(currentQuestion);
-
+let optionselected = false;
 Array.from(options).forEach(option => {
     option.addEventListener('click', () => {
+        if (optionselected) return;
+        optionselected = true;
         currentQuestion++;
         if (option.id == questions[currentQuestion-1].answer) {
         option.style.backgroundColor = 'green';
         score+=10;
         scorenumber.innerText = score;
+        localStorage.setItem('score', score);
         }
         else{
             option.style.backgroundColor = 'red';
@@ -77,6 +80,7 @@ Array.from(options).forEach(option => {
                 loadQuestion(currentQuestion);
                 questioncounter.innerText = `${currentQuestion+1}/${totalQuestions}`;
                 option.style.backgroundColor = 'white';
+                optionselected = false;
             }, 2000);
         }
         else{
@@ -86,4 +90,4 @@ Array.from(options).forEach(option => {
         }
     });
 });
-localStorage.setItem('score', score);
+
