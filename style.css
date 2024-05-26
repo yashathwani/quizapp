@@ -102,8 +102,9 @@ b{
     font-size: 1.5vw;
 }
 .questioncount{
-    font-size: 4vw;
-    color: #4a90e2;
+   font-size: 1.5vw;
+   font-weight: bold;
+   
 }
 .scorenumber{
     font-size: 4vw;
@@ -122,4 +123,26 @@ b{
 #gohome{
     width:7vw;
     text-align: center;
+}
+.questionnumber{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+    margin-bottom: 7%;
+}
+.question-number-block{
+    width: 30%;
+}
+.question-bar{
+    height: 50%;
+    width: 100%;
+    border: 4px solid #4a90e2;
+}
+.coloured{
+   height: 100%;
+    background-color: #4a90e2;
+   width:0%;
+}
+.uncoloured{
+    height: 100%;
 }

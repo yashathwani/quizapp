@@ -44,9 +44,11 @@ let option4 = document.getElementsByClassName('optionend')[3];
 let question = document.getElementsByClassName('question')[0];
 let scorenumber = document.getElementsByClassName('scorenumber')[0];
 let questioncounter = document.getElementsByClassName('questioncount')[0];
+let coloured= document.getElementsByClassName('coloured')[0];
 let currentQuestion = 0;
 let score = 0;
 let options = document.getElementsByClassName('option');
+
 questions = randomize(questions);
 let totalQuestions = questions.length;
 
@@ -61,6 +63,7 @@ function loadQuestion(questionIndex) {
 
 loadQuestion(currentQuestion);
 let optionselected = false;
+coloured.style.width = `${(currentQuestion + 1) / totalQuestions * 100}%`;
 Array.from(options).forEach(option => {
     option.addEventListener('click', () => {
         if (optionselected) return;
@@ -79,6 +82,7 @@ Array.from(options).forEach(option => {
             setTimeout(() =>{ 
                 loadQuestion(currentQuestion);
                 questioncounter.innerText = `${currentQuestion+1}/${totalQuestions}`;
+                coloured.style.width = `${(currentQuestion + 1) / totalQuestions * 100}%`;
                 option.style.backgroundColor = 'white';
                 optionselected = false;
             }, 2000);
